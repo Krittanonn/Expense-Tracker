@@ -1,0 +1,153 @@
+/* add-transaction.css */
+:root {
+    --primary-bg-color: #f4f4f4;
+    --white-bg: #ffffff;
+    --text-color-dark: #333;
+    --text-color-light: #555;
+    --border-color: #ddd;
+    --input-bg: #fafafa;
+    --submit-color: #4CAF50;
+    --submit-hover-color: #45a049;
+    --cancel-color: #f44336;
+    --cancel-hover-color: #e53935;
+    --focus-shadow-color: rgba(72, 162, 224, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--primary-bg-color);
+    line-height: 1.6;
+    color: var(--text-color-dark);
+}
+
+.add-transaction-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    transition: all 0.3s ease;
+}
+
+input:hover, select:hover {
+    border-color: var(--submit-color);
+}
+
+input[type="number"], 
+input[type="datetime-local"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"] {
+    background-color: var(--submit-color);
+    margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--submit-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="button"] {
+    background-color: var(--cancel-color);
+    margin-top: 0.5rem;
+}
+
+button[type="button"]:hover {
+    background-color: var(--cancel-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:focus, 
+input:focus, 
+select:focus {
+    outline: none;
+    border-color: var(--submit-color);
+    box-shadow: 0 0 0 3px var(--focus-shadow-color);
+}
+
+/* Improved Responsive Design */
+@media screen and (max-width: 600px) {
+    .add-transaction-container {
+        width: 95%;
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    input, select, button {
+        font-size: 0.9rem;
+        padding: 0.625rem;
+    }
+}
+
+/* Accessibility and Touch Improvements */
+@media (hover: none) and (pointer: coarse) {
+    input, select, button {
+        min-height: 44px; /* Minimum touch target size */
+        min-width: 44px;
+    }
+}

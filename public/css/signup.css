@@ -1,0 +1,167 @@
+:root {
+    --primary-bg-color: #f4f7fc; /* สีพื้นหลังของหน้า */
+    --white-bg: #ffffff; /* สีพื้นหลังของกล่อง */
+    --text-color-dark: #333; /* สีข้อความหลัก */
+    --text-color-light: #555; /* สีข้อความรอง */
+    --border-color: #ccc; /* สีของขอบ */
+    --submit-color: #4CAF50; /* สีปุ่มส่ง */
+    --submit-hover-color: #45a049; /* สีปุ่มส่งเมื่อ hover */
+    --link-color: #4CAF50; /* สีของลิงก์ */
+    --focus-shadow-color: rgba(72, 162, 224, 0.7); /* เงาสำหรับ focus */
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General page styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--primary-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+}
+
+/* Form container */
+.form-container {
+    background-color: var(--white-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.form-container:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+
+/* Title of the form */
+h2 {
+    color: var(--text-color-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Input fields */
+.input-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:hover {
+    border-color: var(--submit-color);
+}
+
+.input-group input:focus {
+    border-color: var(--submit-color);
+    box-shadow: 0 0 0 3px var(--focus-shadow-color);
+}
+
+/* Submit button */
+.button-group {
+    margin-top: 1.5rem;
+}
+
+.button-group button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--submit-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button-group button:hover {
+    background-color: var(--submit-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-group button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-shadow-color);
+}
+
+/* Link to login page */
+p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #777;
+}
+
+p a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: var(--submit-hover-color);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+    .form-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .input-group input,
+    .button-group button {
+        font-size: 0.9rem;
+        padding: 0.625rem;
+    }
+}
+
+/* Accessibility Improvements */
+@media (hover: none) and (pointer: coarse) {
+    .input-group input,
+    .button-group button {
+        min-height: 44px; /* Minimum touch target size */
+        min-width: 44px;
+    }
+}
