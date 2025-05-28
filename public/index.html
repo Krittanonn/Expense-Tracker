@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page - Expense Tracker</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Expense Tracker</h1>
+            <button id="add-transaction-btn">Add Transaction</button>
+            <button id="chart-btn">Show Expense Chart</button>
+            <button id="logout-btn">Logout</button>
+        </header>
+        <section class="transactions">
+            <h1>Your Transactions</h1>
+            <div class="filters">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Health">Health</option>
+                    <option value="Education">Education</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+
+                <label for="type-filter">Filter by Type:</label>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
+            </div>
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ข้อมูลจะถูกแทรกโดย JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="summary">
+            <p id="total-income">Total Income: 0.00 THB</p>
+            <p id="total-expense">Total Expense: 0.00 THB</p>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
